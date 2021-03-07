@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Город
+{% endblock title %}
+
+{% block content %}
+
+<h1>Город</h1>
+
+<div class="row">
+    <div>
+        <p>Название города: {{object.name}}</p>
+        {% if request.user.is_authenticated %}
+        <p><a href="{% url 'cities:update' object.id %}">Редактировать</a></p>
+        <p><a href="{% url 'cities:delete' object.id %}">Удалить</a></p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'cities:home' %}">
+            <button type="button" class="btn btn-light">Назад к списку</button>
+        </a>
+    </div>
+</div>
+
+{% endblock content%}
