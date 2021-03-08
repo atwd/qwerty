@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+404
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="text-center">Страница не найдена</h1>
+
+<a href="{% url 'routes:home' %}">Вернуться назад</a>
+
+
+
+{% endblock content%}
